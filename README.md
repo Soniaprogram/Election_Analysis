@@ -39,6 +39,10 @@ The analysis of the election shows that:
     - Raymon Anthony Doane received 3.1% of the vote and 11,606 number of votes.
 - The winner of the election was:
     - Diana DeGette, who received 73.8% of the vote and 272,892 number of votes.
+    
+ ![results](https://github.com/Soniaprogram/Election_Analysis/blob/main/Images/election_resultstxt.PNG)
+ 
+ ***The results were written to the "election_results.txt" file as seen above***
 
 ## Election Audit Summary
 This election audit script can be used for any election as long as the data source .csv file follows a similar format where the county is in the second column and the candidate name is in the third column. However, if the data were not to follow this order, the code can be modified to cater to this. If the county was in the fourth column instead, the script (line 52) would be modified to county_name = row[3] rather than the existing row[1] to accomodate this change. Similarly, if the candidate name was in the first column rather than the third column, the script (line 49) would be modified to candidate_name = row[0] rather than the existing candidate_name = row[2] to reference the correct column in the file. 
