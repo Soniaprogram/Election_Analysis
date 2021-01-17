@@ -15,7 +15,7 @@ candidate_options = []
 # Declare the empty dictionary.
 candidate_votes = {}
 
-#Winning Candidate and Winning Count Tracker
+# Track the winning candidate, vote count, and percentage.
 winning_candidate = ""
 winning_count = 0
 winning_percentage = 0
@@ -24,7 +24,7 @@ winning_percentage = 0
 with open(file_to_load) as election_data:
     file_reader = csv.reader(election_data)
 
-    # Print the header row
+    # Read the header row
     headers = next(file_reader)
 
     # Print each row in the CSV file.
@@ -32,10 +32,11 @@ with open(file_to_load) as election_data:
         # Add to the total vote count.
         total_votes += 1
 
-        # Print the candidate name from each row.
+        # Get the candidate name from each row.
         candidate_name = row[2]
 
         # If the candidate does not match any existing candidate
+        # add it to the candidate list.
         if candidate_name not in candidate_options:
 
             # Add the candidate name to the candidate list.
@@ -55,9 +56,9 @@ with open(file_to_load) as election_data:
         # Calculate the percentage of votes.
         vote_percentage = float(votes) / float(total_votes) * 100
 
-        # To do: print out each candidate's name, vote count, and percentage of votes to the terminal
+        # Print out each candidate's name, vote count, and percentage of votes to the terminal
         print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
-        # Determine if the votes is greater than the winning court.
+        # Determine winning vote court, winning percentage, and candidate
         if (votes > winning_count) and (vote_percentage > winning_percentage):
             # If true then set winning_count = votes and winning_percent = vote_percentage
             winning_count = votes
